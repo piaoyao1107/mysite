@@ -15,11 +15,39 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from django.shortcuts import HttpResponse,render
+from django.shortcuts import HttpResponse,render,redirect
+from mycode import views
+
+
+def index(requeust):
+    return HttpResponse("indexaaa")
+
 
 def login(request):
     #return HttpResponse('登录成功！')
-    return render(request,'login.html')
+    if request.method == "GET":
+        return render(request,'login.html')
+    else:
+        user = request.POST.get('username')
+        passwd = request.POST.get('password')
+        if user=='admin' and passwd=='123456':
+            # return redirect('http://www.baidu.com')
+            # return redirect("/index/")
+            return render(
+                request,
+                'index.html',
+                {'name':'alex',
+                 'users':['李一','李二'],
+                 'user_dict':{'key1':'value1','key2':'value2'},
+                 'user_list_dict':[
+                     {'id':1,'name':"Tom",'sex':'boy'},
+                     {'id':2,'name':"John",'sex':'boy'},
+                     {'id':3,'name':"Smile",'sex':'girl'}
+                 ]}
+            )
+        else:
+            return render(request, 'login.html',{'msg':'用户名或密码错误！'})
+
 
 
 
@@ -27,4 +55,7 @@ def login(request):
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('login/', login),
+    path('index/',index),
+    path('classes/',views.classes),
+    path('add_class/',views.add_class),
 ]
