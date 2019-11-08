@@ -1,0 +1,5 @@
+hub.newbanker.cn/newbanker/im-service:201911051601
+hub.newbanker.cn/newbanker/im-web:201910211453
+hub.newbanker.cn/newbanker/is:201911060853
+hub.newbanker.cn/newbanker/sop-service:201909251904
+hub.newbanker.cn/wbs-cms:201910091120

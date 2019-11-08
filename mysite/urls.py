@@ -21,6 +21,9 @@ def login(request):
     #return HttpResponse('登录成功！')
     return render(request,'login.html')
 
+
+
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('login/', login),
