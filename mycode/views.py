@@ -62,3 +62,17 @@ def edit_class(request):
         conn.close()
         return redirect('/classes/')
 
+def students(request):
+    """
+    学生列表
+    :param request:
+    :return:
+    """
+    conn = pymysql.connect("localhost", "root", "Passw0rd", "mysite")
+    cursor = conn.cursor(cursor=pymysql.cursors.DictCursor)
+    cursor.execute("select student.id,student.name,class.title from student left join class on student.class_id = class.id;")
+    result = cursor.fetchall()
+    cursor.close()
+    conn.close()
+
+    return render(request,'students.html',{'result':result})
