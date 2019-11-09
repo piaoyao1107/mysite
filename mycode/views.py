@@ -60,5 +60,6 @@ def edit_class(request):
         conn.commit()
         cursor.close()
         conn.close()
+        print(nid)
         return redirect('/classes/')
 
