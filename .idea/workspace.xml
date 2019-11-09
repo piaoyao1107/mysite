@@ -86,14 +86,14 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/mycode/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="260">
-              <caret line="62" column="17" selection-start-line="62" selection-start-column="17" selection-end-line="62" selection-end-column="17" />
+            <state relative-caret-position="245">
+              <caret line="61" column="20" selection-start-line="61" selection-start-column="20" selection-end-line="61" selection-end-column="20" />
               <folding>
                 <element signature="e#0#44#0" expanded="true" />
-                <marker date="1573265793000" expanded="true" signature="328:333" ph="..." />
-                <marker date="1573265793000" expanded="true" signature="447:452" ph="..." />
-                <marker date="1573265793000" expanded="true" signature="911:916" ph="..." />
-                <marker date="1573265793000" expanded="true" signature="1314:1315" ph="..." />
+                <marker date="1573265827000" expanded="true" signature="328:333" ph="..." />
+                <marker date="1573265827000" expanded="true" signature="447:452" ph="..." />
+                <marker date="1573265827000" expanded="true" signature="911:916" ph="..." />
+                <marker date="1573265827000" expanded="true" signature="1314:1315" ph="..." />
               </folding>
             </state>
           </provider>
@@ -448,14 +448,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/mycode/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="260">
-          <caret line="62" column="17" selection-start-line="62" selection-start-column="17" selection-end-line="62" selection-end-column="17" />
+        <state relative-caret-position="245">
+          <caret line="61" column="20" selection-start-line="61" selection-start-column="20" selection-end-line="61" selection-end-column="20" />
           <folding>
             <element signature="e#0#44#0" expanded="true" />
-            <marker date="1573265793000" expanded="true" signature="328:333" ph="..." />
-            <marker date="1573265793000" expanded="true" signature="447:452" ph="..." />
-            <marker date="1573265793000" expanded="true" signature="911:916" ph="..." />
-            <marker date="1573265793000" expanded="true" signature="1314:1315" ph="..." />
+            <marker date="1573265827000" expanded="true" signature="328:333" ph="..." />
+            <marker date="1573265827000" expanded="true" signature="447:452" ph="..." />
+            <marker date="1573265827000" expanded="true" signature="911:916" ph="..." />
+            <marker date="1573265827000" expanded="true" signature="1314:1315" ph="..." />
           </folding>
         </state>
       </provider>
