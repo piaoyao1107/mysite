@@ -76,3 +76,24 @@ def students(request):
     conn.close()
 
     return render(request,'students.html',{'result':result})
+
+
+def add_student(request):
+    if request.method == "GET":
+        conn = pymysql.connect("localhost", "root", "Passw0rd", "mysite")
+        cursor = conn.cursor(cursor=pymysql.cursors.DictCursor)
+        cursor.execute("select id,title from class")
+        class_list = cursor.fetchall()
+        cursor.close()
+        conn.close()
+        return render(request, "add_student.html", {'class_list': class_list})
+    else:
+        name = request.POST.get('name')
+        class_id = request.POST.get('class_id')
+        conn = pymysql.connect("localhost", "root", "Passw0rd", "mysite")
+        cursor = conn.cursor(cursor=pymysql.cursors.DictCursor)
+        cursor.execute("insert into student(name,class_id) values(%s,%s)", [name, class_id])
+        conn.commit()
+        cursor.close()
+        conn.close()
+        return redirect('/students/')
