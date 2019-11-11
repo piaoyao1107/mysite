@@ -66,13 +66,19 @@
             <p>
                 <input id="title" type="text" name="title">
             </p>
-            <input type="button" value="提交" onclick="AjaxSend();">
+            <input type="button" value="提交" onclick="AjaxSend();"><span id="error"></span>
+            <input type="button" value="取消" onclick="cancleModel();">
             <!--
             </form>
             -->
         </div>
         <script src="/static/jquery-3.3.1.js"></script>
         <script>
+            function cancleModel() {
+                document.getElementById('shadow').classList.add('hide');
+                document.getElementById('model').classList.add('hide');
+            }
+
             function showModel() {
                 document.getElementById('shadow').classList.remove('hide');
                 document.getElementById('model').classList.remove('hide');
@@ -87,9 +93,10 @@
                         //data代表服务端返回的value
                         console.log(data);
                         if(data == "ok"){
-                            alert("添加成功");
+                            location.href="/classes/";
                         }else {
-                            alert("添加失败");
+                            $('#error').text(data);
+
                         }
                     }
                 })

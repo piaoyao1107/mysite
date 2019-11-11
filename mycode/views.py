@@ -137,7 +137,7 @@ def modal_add_class(request):
         return HttpResponse('ok')
         #return redirect('/classes/')
     else:
-        return HttpResponse('不ok')
+        return HttpResponse('班级标题不能为空')
 
 
 
