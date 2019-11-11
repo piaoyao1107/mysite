@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>测试环境小程序信息列表</title>
+</head>
+<body>
+    <h1>测试环境小程序信息列表</h1>
+    <!--
+    <div>
+        <a href="/add_student/">添加小程序</a>
+    </div>
+    -->
+    <table border="1">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>小程序名称</th>
+                <th>appid</th>
+                <th>appSecret</th>
+                <th>原始id</th>
+                <th>账号</th>
+                <th>密码</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in miniProgram_list %}
+                <tr>
+                    <td>{{ row.id }}</td>
+                    <td>{{ row.name }}</td>
+                    <td>{{ row.appId }}</td>
+                    <td>{{ row.appSecret }}</td>
+                    <td>{{ row.ghId }}</td>
+                    <td>{{ row.account }}</td>
+                    <td>{{ row.password }}</td>
+                    <td>
+                        <a href="/del_class/?nid={{ row.id }}">删除</a>
+                        |
+                        <a href="/edit_class/?nid={{ row.id }}">编辑</a>
+                    </td>
+                </tr>
+
+            {% endfor %}
+        </tbody>
+    </table>
+
+</body>
+</html>

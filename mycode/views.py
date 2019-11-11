@@ -9,13 +9,11 @@ def classes(request):
     result = cursor.fetchall()
     cursor.close()
     conn.close()
-
-
     return render(request,"classes.html",{'result':result})
 
 
-
 def add_class(request):
+
     if request.method == "GET":
         return render(request, "add_class.html")
     else:
@@ -40,7 +38,9 @@ def del_class(request):
     conn.close()
     return redirect('/classes/')
 
+
 def edit_class(request):
+
     if request.method == "GET":
         nid = request.GET.get('nid')
         conn = pymysql.connect("localhost", "root", "Passw0rd", "mysite")
@@ -62,12 +62,14 @@ def edit_class(request):
         conn.close()
         return redirect('/classes/')
 
+
 def students(request):
     """
     学生列表
     :param request:
     :return:
     """
+
     conn = pymysql.connect("localhost", "root", "Passw0rd", "mysite")
     cursor = conn.cursor(cursor=pymysql.cursors.DictCursor)
     cursor.execute("select student.id,student.name,class.title from student left join class on student.class_id = class.id;")
@@ -97,3 +99,18 @@ def add_student(request):
         cursor.close()
         conn.close()
         return redirect('/students/')
+
+def miniProgram(request):
+    conn = pymysql.connect("localhost", "root", "Passw0rd", "mysite")
+    cursor = conn.cursor(cursor=pymysql.cursors.DictCursor)
+    cursor.execute(
+        "select id,name,appId,appSecret,ghId,account,password,tenant from MiniProgram;")
+    miniProgram_list = cursor.fetchall()
+    cursor.close()
+    conn.close()
+    return render(request,"miniProgram.html",{'miniProgram_list':miniProgram_list})
+
+
+
+
+
