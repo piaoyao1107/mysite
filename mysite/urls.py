@@ -62,5 +62,8 @@ urlpatterns = [
     path('edit_class/',views.edit_class),
     path('students/',views.students),
     path('add_student/',views.add_student),
+    path('edit_student/',views.edit_student),
     path('miniProgram/',views.miniProgram),
+    path('modal_add_class/',views.modal_add_class),
+
 ]
